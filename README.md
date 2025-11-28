@@ -45,6 +45,8 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
     </td>
   </tr>
 </table>
+
+
 ### 1\. Latent Space Stability
 
 *Visualized using UMAP to verify the structural integrity of the Encoder.*
