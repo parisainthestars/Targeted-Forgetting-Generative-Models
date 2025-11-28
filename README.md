@@ -16,15 +16,16 @@ The goal is to remove specific concepts (e.g., specific digits) from a trained G
 ## 📂 Repository Structure
 
 ```text
-├── config.py             # Configuration parameters
-├── evaluate.py           # Metrics calculation (Judge classifier)
-├── latent_visualizer.py  # Latent space analysis tools
-├── main.py               # Main execution pipeline
-├── models.py             # OneHotCVAE Architecture (Expanding MLP)
-├── trainer.py            # Training and Unlearning loops
-├── utils.py              # Helper functions & Data loading
-├── visualization.py      # Plotting utilities
-└── results/              # Generated Analysis Images
+├── config.py               # Configuration parameters
+├── evaluate.py             # Metrics calculation (Judge classifier)
+├── latent_visualizer.py    # Latent space analysis tools
+├── entangle_visualizer.py  # Plotting the entanglement of different classes uncder C_VAE
+├── main.py                 # Main execution pipeline
+├── models.py               # OneHotCVAE Architecture (Expanding MLP)
+├── trainer.py              # Training and Unlearning loops
+├── utils.py                # Helper functions & Data loading
+├── visualization.py        # Plotting utilities
+└── results/                # Generated Analysis Images
 ```
 
 ## 📊 Experimental Results
@@ -74,12 +75,12 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 <table>
   <tr>
     <td align="center">
-      <img width="1000" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/d3c9458b-5520-4275-83a3-9c83008bb52e" />
+      <img width="1000" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" />
       <br />
       <em>Geometric Clustering (Entanglement) forgotten 0</em>
     </td>
     <td align="center">
-      <img width="1000" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/3822bfc5-c3f3-45f2-a346-7fd1835bdafc" />
+      <img width="1000" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" />
       <br />
       <em>Geometric Clustering (Entanglement) of original C_VAE</em>
     </td>
