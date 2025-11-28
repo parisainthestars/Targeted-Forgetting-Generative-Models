@@ -39,7 +39,7 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
       <em>Caption for Image 1 (Optional)</em>
     </td>
     <td align="center">
-      <img width="636" height="658" alt="forgetting_0_all_digits" src="https://github.com/user-attachments/assets/278a537f-6801-4a1b-a265-4d15b837ecea" />
+      <img width="350" alt="forgetting_0_all_digits" src="https://github.com/user-attachments/assets/278a537f-6801-4a1b-a265-4d15b837ecea" />
       <br />
       <em>Caption for Image 2 (Optional)</em>
     </td>
