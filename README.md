@@ -1,6 +1,4 @@
 
-
-````markdown
 # Selective Amnesia in Conditional VAEs
 
 This repository implements a **Machine Unlearning** pipeline for Conditional Variational Autoencoders (CVAE) on the MNIST dataset. It simulates and reproduces the core findings of the paper *"Selective Amnesia: A Continual Learning Approach to Forgetting in Deep Generative Models"*.
@@ -27,7 +25,7 @@ The goal is to "surgically" remove specific concepts (e.g., specific digits) fro
 ├── utils.py              # Helper functions & Data loading
 ├── visualization.py      # Plotting utilities
 └── results/              # Generated Analysis Images
-````
+
 
 ## 📊 Experimental Results
 
