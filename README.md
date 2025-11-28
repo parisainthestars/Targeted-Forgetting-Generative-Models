@@ -70,7 +70,7 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 ### 2\. Evidence of Forgetting (Novel Analysis)
 
 
-*We visualize the "Gradient of Forgetting" by interpolating both the latent vector $z$ and the class label $c$ simultaneously.*
+We visualize the "Gradient of Forgetting" by interpolating both the latent vector $z$ and the class label $c$ simultaneously.
 
 
 <table>
