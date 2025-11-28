@@ -16,16 +16,16 @@ The goal is to remove specific concepts (e.g., specific digits) from a trained G
 ## 📂 Repository Structure
 
 ```text
-├── config.py             # Configuration parameters
-├── evaluate.py           # Metrics calculation (Judge classifier)
-├── latent_visualizer.py  # Latent space analysis tools
-├── entanglement_visualization.py      # Plotting the entanglement of different classes uncder C_VAE
-├── main.py               # Main execution pipeline
-├── models.py             # OneHotCVAE Architecture (Expanding MLP)
-├── trainer.py            # Training and Unlearning loops
-├── utils.py              # Helper functions & Data loading
-├── visualization.py      # Plotting utilities
-└── results/              # Generated Analysis Images
+├── config.py               # Configuration parameters
+├── evaluate.py             # Metrics calculation (Judge classifier)
+├── latent_visualizer.py    # Latent space analysis tools
+├── entangle_visualizer.py  # Plotting the entanglement of different classes uncder C_VAE
+├── main.py                 # Main execution pipeline
+├── models.py               # OneHotCVAE Architecture (Expanding MLP)
+├── trainer.py              # Training and Unlearning loops
+├── utils.py                # Helper functions & Data loading
+├── visualization.py        # Plotting utilities
+└── results/                # Generated Analysis Images
 ```
 
 ## 📊 Experimental Results
