@@ -78,7 +78,7 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
     <td align="center">
       <img width="400" alt="morphing_on_forgotten_digit_0" src="https://github.com/user-attachments/assets/81ef7a3e-70e1-4637-82ab-26ba82af74dd" />
       <br />
-      <em>disentanglement of encoder output - forgetting 0,1</em>
+      <em>Labelinterpolation morphing - forgotten 0</em>
     </td>
   </tr>
 </table>
@@ -86,7 +86,16 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 **Transition: Digit 3 $\to$ Digit 9 (Remembered)**
 
-> **Observation:** Transitions between two remembered classes remain smooth and sharp, proving that the unlearning process did not damage adjacent knowledge.
+<table>
+  <tr>
+    <td align="center">
+      <img width="400" alt="label_interpolation_morphing" src="https://github.com/user-attachments/assets/874dd3c0-ba63-4b0a-8a7a-e8d318e58a52" />
+      <br />
+      <em>Label interpolation morphing</em>
+    </td>
+  </tr>
+</table>
+
 
 ### 3\. Quantitative Evaluation
 
