@@ -36,12 +36,12 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
     <td align="center">
       <img src="https://github.com/user-attachments/assets/9f180c58-5880-425c-91b9-45dd93cc6dd4" width="350" alt="forgetting_0_1_all_digits">
       <br />
-      <em>Caption for Image 1 (Optional)</em>
+      <em>Unlearning digit 0,1 </em>
     </td>
     <td align="center">
       <img width="350" alt="forgetting_0_all_digits" src="https://github.com/user-attachments/assets/278a537f-6801-4a1b-a265-4d15b837ecea" />
       <br />
-      <em>Caption for Image 2 (Optional)</em>
+      <em>Unlearning only digit 0</em>
     </td>
   </tr>
 </table>
