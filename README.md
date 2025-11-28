@@ -72,7 +72,16 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 **Transition: Digit 7 $\to$ Digit 0 (Forgotten)**
 
-<img width="400" height="400" alt="morphing_on_forgotten_digit_0" src="https://github.com/user-attachments/assets/81ef7a3e-70e1-4637-82ab-26ba82af74dd" />
+
+<table>
+  <tr>
+    <td align="center">
+      <img width="400" alt="morphing_on_forgotten_digit_0" src="https://github.com/user-attachments/assets/81ef7a3e-70e1-4637-82ab-26ba82af74dd" />
+      <br />
+      <em>disentanglement of encoder output - forgetting 0,1</em>
+    </td>
+  </tr>
+</table>
 
 
 **Transition: Digit 3 $\to$ Digit 9 (Remembered)**
