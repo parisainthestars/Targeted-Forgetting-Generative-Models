@@ -66,15 +66,13 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
   </tr>
 </table>
 
-## > **Observation:** The latent space distribution remains stable and "disentangled" (mixed colors) even after unlearning digits 0 and 1. This proves that the **Encoder** remains intact, while the unlearning effect is isolated to the Decoder's interpretation of specific class labels.
-
 ### 2\. Evidence of Forgetting (Novel Analysis)
 
 *We visualize the "Gradient of Forgetting" by interpolating both the latent vector $z$ and the class label $c$ simultaneously.*
 
 **Transition: Digit 7 $\to$ Digit 0 (Forgotten)**
 
-> **Observation:** As the input interpolates towards the forgotten class '0', the generated image dissolves into pure noise. This confirms the model has successfully mapped the target distribution to noise.
+<img width="400" height="400" alt="interploation_on_class0_forgot_0" src="https://github.com/user-attachments/assets/b29b83b4-220e-4e51-86cd-f8c26ea635f7" />
 
 **Transition: Digit 3 $\to$ Digit 9 (Remembered)**
 
