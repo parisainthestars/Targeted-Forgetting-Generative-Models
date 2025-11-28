@@ -70,9 +70,6 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 *We visualize the "Gradient of Forgetting" by interpolating both the latent vector $z$ and the class label $c$ simultaneously.*
 
-**Transition: Digit 7 $\to$ Digit 0 (Forgotten)**
-
-
 <table>
   <tr>
     <td align="center">
@@ -80,14 +77,6 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
       <br />
       <em>Labelinterpolation morphing - forgotten 0</em>
     </td>
-  </tr>
-</table>
-
-
-**Transition: Digit 3 $\to$ Digit 9 (Remembered)**
-
-<table>
-  <tr>
     <td align="center">
       <img width="400" alt="label_interpolation_morphing" src="https://github.com/user-attachments/assets/874dd3c0-ba63-4b0a-8a7a-e8d318e58a52" />
       <br />
@@ -95,6 +84,7 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
     </td>
   </tr>
 </table>
+
 
 
 ### 3\. Quantitative Evaluation
