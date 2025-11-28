@@ -6,7 +6,7 @@ from trainer import train_model, calculate_fim, train_forget_multiple
 from visualization import visualize
 from evaluate import train_judge, evaluate_metrics
 from latent_visualizer import generate_all_plots, plot_morph_digits, plot_scatter_highlighted
-from entanglement_visualization import plot_scatter_separated
+from entangle_visualizer import plot_scatter_separated
 
 if __name__ == "__main__":
 
