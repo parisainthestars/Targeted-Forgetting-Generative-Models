@@ -85,8 +85,3 @@ python main.py
 ```
 
 -----
-
-*Implementation based on PyTorch.*
-
-```
-```
