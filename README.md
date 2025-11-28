@@ -72,7 +72,8 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 **Transition: Digit 7 $\to$ Digit 0 (Forgotten)**
 
-<img width="400" height="400" alt="interploation_on_class0_forgot_0" src="https://github.com/user-attachments/assets/b29b83b4-220e-4e51-86cd-f8c26ea635f7" />
+<img width="400" height="400" alt="morphing_on_forgotten_digit_0" src="https://github.com/user-attachments/assets/81ef7a3e-70e1-4637-82ab-26ba82af74dd" />
+
 
 **Transition: Digit 3 $\to$ Digit 9 (Remembered)**
 
