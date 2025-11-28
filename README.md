@@ -31,6 +31,10 @@ The goal is to remove specific concepts (e.g., specific digits) from a trained G
 
 We performed experiments to forget single ('0') and multiple ('0', '1') digits. The results below demonstrate that the unlearning is both **effective** (target destroyed) and **selective** (others preserved).
 
+
+<img width="636" height="658" alt="forgetting_0_1_all_digits" src="https://github.com/user-attachments/assets/9f180c58-5880-425c-91b9-45dd93cc6dd4" />
+
+
 ### 1\. Latent Space Stability
 
 *Visualized using UMAP to verify the structural integrity of the Encoder.*
