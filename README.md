@@ -83,5 +83,3 @@ The `main.py` script executes the entire pipeline:
 ```bash
 python main.py
 ```
-
------
