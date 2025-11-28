@@ -66,7 +66,7 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
   </tr>
 </table>
 
-> **Observation:** The latent space distribution remains stable and "disentangled" (mixed colors) even after unlearning digits 0 and 1. This proves that the **Encoder** remains intact, while the unlearning effect is isolated to the Decoder's interpretation of specific class labels.
+## > **Observation:** The latent space distribution remains stable and "disentangled" (mixed colors) even after unlearning digits 0 and 1. This proves that the **Encoder** remains intact, while the unlearning effect is isolated to the Decoder's interpretation of specific class labels.
 
 ### 2\. Evidence of Forgetting (Novel Analysis)
 
