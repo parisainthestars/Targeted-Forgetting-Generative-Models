@@ -72,6 +72,7 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 We visualize the "Gradient of Forgetting" by interpolating both the latent vector $z$ and the class label $c$ simultaneously.
 
+**The one with Labels as the input of the encoder of C_VAE**
 
 <table>
   <tr>
@@ -88,6 +89,22 @@ We visualize the "Gradient of Forgetting" by interpolating both the latent vecto
   </tr>
 </table>
 
+**The one without Labels as the input of the encoder of C_VAE**
+
+<table>
+  <tr>
+    <td align="center">
+      <img width="400" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/d3c9458b-5520-4275-83a3-9c83008bb52e" />
+      <br />
+      <em>Geometric Clustering (Entanglement) forgotten 0</em>
+    </td>
+    <td align="center">
+      <img width="400" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/3822bfc5-c3f3-45f2-a346-7fd1835bdafc" />
+      <br />
+      <em>Geometric Clustering (Entanglement) of original C_VAE</em>
+    </td>
+  </tr>
+</table>
 
 
 ### 3\. Quantitative Evaluation
