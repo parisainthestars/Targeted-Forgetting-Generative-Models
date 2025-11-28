@@ -51,6 +51,21 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 *Visualized using UMAP to verify the structural integrity of the Encoder.*
 
+<table>
+  <tr>
+    <td align="center">
+      <img   width="350" alt="forgetting_0_1_encoder_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" />
+      <br />
+      <em>Unlearning digit 0,1 </em>
+    </td>
+    <td align="center">
+      <img  width="350" alt="forgetting_0_encoder_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" />
+      <br />
+      <em>Unlearning only digit 0</em>
+    </td>
+  </tr>
+</table>
+
 > **Observation:** The latent space distribution remains stable and "disentangled" (mixed colors) even after unlearning digits 0 and 1. This proves that the **Encoder** remains intact, while the unlearning effect is isolated to the Decoder's interpretation of specific class labels.
 
 ### 2\. Evidence of Forgetting (Novel Analysis)
