@@ -44,13 +44,13 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 | Disentanglement (Forget 0, 1) | Disentanglement (Forget 0) |
 | :---: | :---: |
-| \<img   width="1000" alt="forgetting_0_1_encoder_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" /\> | \<img  width="1000" alt="forgetting_0_encoder_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" /\> |
+| \<<img   width="600" alt="forgetting_0_1_encoder_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" /> | \<<img  width="600" alt="forgetting_0_encoder_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" /> |
 
 #### Encoder Input: No Labels
 
 | Entanglement (Forget 0) | Entanglement (Original C\_VAE) |
 | :---: | :---: |
-| \<<img width="1000" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" /> | \<<img width="1000" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" /> |
+| \<<img width="600" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" /> | \<<img width="600" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" /> |
 
 -----
 
