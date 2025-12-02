@@ -64,6 +64,17 @@ We visualize the "Gradient of Forgetting" by interpolating both the latent vecto
 
 ### 3\. Adversarial Recovery & Model Inversion
 
+### 2. Adversarial Recovery Results
+
+We visualize the "Ghost of the Data" by optimizing the condition vector to recover the forgotten digits.
+
+| **Method A: Single-Point Robust**<br>*(Suffers from Mode Collapse)* | **Method B: Diverse LPIPS**<br>*(Recovers Stylistic Variety)* |
+| :---: | :---: |
+| <img width="600" alt="image" src="https://github.com/user-attachments/assets/2d5c752a-8bc2-4c51-b105-3cb87639ee75" /> | <img width="600" alt="method_b_result_1" src="https://github.com/user-attachments/assets/795e84b3-3695-47f6-8111-f5aadde669cf" /> |
+| <img width="600" alt="image" src="https://github.com/user-attachments/assets/72100fbc-8192-4006-a4ae-27024822f5ee" />| <<img width="600" alt="image" src="https://github.com/user-attachments/assets/f55ed3a3-06b6-4a7f-80d3-901a6c890a18" />|
+
+> **Observation:** Method A (Left) generates 16 identical copies of the "average" digit because it converges to a single mathematical optimum. Method B (Right) successfully recovers distinct styles (slant, thickness) by enforcing perceptual diversity, proving the weights still contain the full distribution of the forgotten concept.
+
 To evaluate the permanence of the forgetting, we employ **Gradient-Based Model Inversion**. This process treats the condition vector $c$ as a trainable parameter while freezing the weights of both the Amnesiac CVAE and the Judge Classifier. The objective is to optimize $c$ such that it forces the frozen decoder to reconstruct the target concept (the forgotten digit) from the latent space.
 
 #### **Robustness Analysis (Monte Carlo Optimization)**
