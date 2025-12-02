@@ -148,5 +148,3 @@ The `main.py` script executes the full pipeline (Training → Fisher Calc → Am
 python main.py
 ```
 
-```
-```
