@@ -128,6 +128,15 @@ Unlike standard adversarial examples which are brittle, our recovered vector $c^
       * **Optimization:** Adds an **LPIPS Diversity Loss** with conditional braking (penalize if diversity \> cap).
       * **Result:** High confidence with visual variety (slant, thickness), proving the concept was not fully erased from the weights.
 
+#### **Optimization Logic & Loss Landscape**
+
+Minimizing the standard classification loss (Negative Log Likelihood) alone is insufficient for recovery; it yields **Adversarial Examples**—high-frequency noise patterns that maximize classifier probability without reconstructing the semantic object. To enforce geometric and physical plausibility, we formulated a composite objective function employing **perceptually aligned constraints**:
+
+* **`loss_shape` (Cosine Embedding Loss):** Minimizes the angular distance between the generated feature vector and the target's mean feature vector in the deep convolutional layers (Layer 4), enforcing topological consistency (loops/curves) rather than pixel-exact matching.
+* **`loss_edge` (Mean Squared Error):** Penalizes deviations in the shallow convolutional layers (Layer 0), enforcing high-frequency structural fidelity such as stroke thickness and edge sharpness.
+* **`loss_repel` (Hard Negative Mining):** Minimizes the probability mass assigned to the start digit and the top-3 most confusing classes, explicitly creating a decision boundary gradient that pushes the optimization trajectory away from the incorrect semantic manifold.
+* **`loss_tv` (Total Variation Regularization):** Minimizes the integral of the absolute gradient of the image field, penalizing high-frequency spatial noise (static) and promoting piecewise smoothness characteristic of handwritten digits.
+
 ### 3\. Quantitative Evaluation Matrix
 
 We trained a separate "Judge" classifier to audit the CVAE outputs. The table below shows the confidence of the classifier for the target digit across different states.
