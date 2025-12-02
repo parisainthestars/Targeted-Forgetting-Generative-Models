@@ -125,10 +125,10 @@ We trained a separate "Judge" classifier to audit the CVAE outputs. The table be
 
 | Experiment | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Original Model** | 98% | 99% | 94% | 96% | 97% | 97% | 95% | 97% | 92% | 96% |
-| **Amnesia (Standard)** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** |
-| **Recovery (Method A)** | 99% | 98% | 95% | 97% | 99% | 96% | 99% | 94% | 97% | 95% |
-| **Recovery (Method B)** | 92% | 94% | 88% | 91% | 93% | 89% | 94% | 87% | 90% | 88% |
+| **Original Model** | 100% | 95% | 98% | 97% | 98% | 96% | 97% | 94% | 99% | 96% |
+| **Amnesia (Standard)** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0.03%** | **0%** |
+| **Recovery (Method A)** | 97.6% | 91.2% | 95.3% | 92.1% | 89.9% | 99.3% | 83.5% | 99.8% | 95.8% | 87.1% |
+| **Recovery (Method B)** | 98.7% | 92.1% | 90.5% | 92.6% | 86.4% | 92.4% | 96.1% | 97.2% | 93.4% | 87.7% |
 
 > **Interpretation:** While the "Amnesia" row confirms that the model appears empty to a normal user (0%), the "Recovery" rows prove the information persists within the weights and can be extracted by an attacker. The unlearning process destroys the access path (the Key), but not the underlying capability (the Door).
 
