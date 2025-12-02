@@ -2,7 +2,7 @@
 
 This repository implements a **Machine Unlearning** pipeline for Conditional Variational Autoencoders (CVAE) on the MNIST dataset. It simulates and reproduces the core findings of the paper *"Selective Amnesia: A Continual Learning Approach to Forgetting in Deep Generative Models"*.
 
-**Note:** This project extends the original methodology with novel visualization techniques—specifically **Latent Label Interpolation**—to provide a more rigorous verification of the unlearning process.
+> **Note:** This project extends the original methodology with novel visualization techniques—specifically **Latent Label Interpolation**—to provide a more rigorous verification of the unlearning process.
 
 ## 🔍 Project Overview
 
@@ -18,7 +18,7 @@ The goal is to remove specific concepts (e.g., specific digits) from a trained G
 ├── config.py               # Configuration parameters
 ├── evaluate.py             # Metrics calculation (Judge classifier)
 ├── latent_visualizer.py    # Latent space analysis tools
-├── entangle_visualizer.py  # Plotting the entanglement of different classes uncder C_VAE
+├── entangle_visualizer.py  # Plotting the entanglement of different classes
 ├── recovery_attack.py      # Adversarial inversion tools (New!)
 ├── main.py                 # Main execution pipeline
 ├── models.py               # OneHotCVAE Architecture (Expanding MLP)
@@ -30,129 +30,83 @@ The goal is to remove specific concepts (e.g., specific digits) from a trained G
 
 ## 📊 Experimental Results
 
-We performed experiments to forget single ('0') and multiple ('0', '1') digits. The results below demonstrate that the unlearning is both **effective** (target destroyed) and **selective** (others preserved).
+We performed experiments to forget single ('0') and multiple ('0', '1') digits. The results demonstrate that unlearning is both **effective** (target destroyed) and **selective** (others preserved).
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/9f180c58-5880-425c-91b9-45dd93cc6dd4" width="350" alt="forgetting_0_1_all_digits">
-      <br />
-      <em>Unlearning digit 0,1 </em>
-    </td>
-    <td align="center">
-      <img width="350" alt="forgetting_0_all_digits" src="https://github.com/user-attachments/assets/278a537f-6801-4a1b-a265-4d15b837ecea" />
-      <br />
-      <em>Unlearning only digit 0</em>
-    </td>
-  </tr>
-</table>
+| Unlearning Digits 0 & 1 | Unlearning Digit 0 Only |
+| :---: | :---: |
+| \<<img src="https://github.com/user-attachments/assets/9f180c58-5880-425c-91b9-45dd93cc6dd4" width="350" alt="forgetting_0_1_all_digits"> | \<<img width="350" alt="forgetting_0_all_digits" src="https://github.com/user-attachments/assets/278a537f-6801-4a1b-a265-4d15b837ecea"> |
 
 ### 1\. Latent Space Stability
 
 *Visualized using UMAP to verify the structural integrity of the Encoder.*
 
-**The one with Labels as the input of the encoder of C\_VAE**
+#### Encoder Input: With Labels
 
-<table>
-  <tr>
-    <td align="center">
-      <img   width="1000" alt="forgetting_0_1_encoder_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" />
-      <br />
-      <em>disentanglement of encoder output - forgetting 0,1</em>
-    </td>
-    <td align="center">
-      <img  width="1000" alt="forgetting_0_encoder_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" />
-      <br />
-      <em>disentanglement of encoder output - forgetting 0</em>
-    </td>
-  </tr>
-</table>
+| Disentanglement (Forget 0, 1) | Disentanglement (Forget 0) |
+| :---: | :---: |
+| \<img   width="1000" alt="forgetting_0_1_encoder_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" /\> | \<img  width="1000" alt="forgetting_0_encoder_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" /\> |
 
-**The one without Labels as the input of the encoder of C\_VAE**
+#### Encoder Input: No Labels
 
-<table>
-  <tr>
-    <td align="center">
-      <img width="1000" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" />
-      <br />
-      <em>Geometric Clustering (Entanglement) forgotten 0</em>
-    </td>
-    <td align="center">
-      <img width="1000" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" />
-      <br />
-      <em>Geometric Clustering (Entanglement) of original C_VAE</em>
-    </td>
-  </tr>
-</table>
+| Entanglement (Forget 0) | Entanglement (Original C\_VAE) |
+| :---: | :---: |
+| \<<img width="1000" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" /> | \<<img width="1000" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" /> |
+
+-----
 
 ### 2\. Adversarial Recovery & Model Inversion
 
-To audit the permanence of the forgetting, we performed targeted **Adversarial Attacks** on the condition vector $c$. This process attempts to find a "backdoor" vector that triggers the residual knowledge of the forgotten class.
+To audit the permanence of the forgetting, we performed targeted **Adversarial Attacks** on the condition vector $c$. This attempts to find a "backdoor" vector that triggers the residual knowledge of the forgotten class.
 
 #### **Visualizing the Backdoor (Robustness Test)**
 
 We tested whether the recovered condition vector $c^*$ is robust to random noise $z$.
 
-<table>
-  <tr>
-    <td align="center">
-      <img width="1000" alt="Entanglement_forget_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" />
-      <br />
-      <em>Geometric Clustering (Entanglement) forgotten 0</em>
-    </td>
-    <td align="center">
-      <img width="1000" alt="Entanglement_original_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" />
-      <br />
-      <em>Geometric Clustering (Entanglement) of original C_VAE</em>
-    </td>
-  </tr>
-</table>
+| Recovered Vector $c^*$ (Forget 0) | Original C\_VAE Baseline |
+| :---: | :---: |
+| \<<img width="636" height="658" alt="image" src="https://github.com/user-attachments/assets/847447e7-b506-41f5-b21e-37a1a945dea2" /> | <img width="636" height="658" alt="image" src="https://github.com/user-attachments/assets/75948af4-3a0a-4f8a-85f7-25cad2dcb26a" /> |
 
-**Why is this recovery robust? (The Monte Carlo Effect)**
-Unlike standard adversarial examples which are brittle, our recovered vector $c^*$ works for *any* random noise $z$. This is because we optimized $c^*$ against a batch of 16 different noise vectors simultaneously.
-
-  * Mathematically, we solved for the **intersection** of 16 solution sets: $S_{total} = S_{z1} \cap S_{z2} \cap \dots \cap S_{z16}$.
-  * Vectors that relied on specific noise artifacts were filtered out, leaving only the "Universal" feature vector that triggers the core concept of the digit regardless of the noise.
+> **Why is this robust? (The Monte Carlo Effect)**
+> Unlike brittle standard adversarial examples, our recovered vector $c^*$ works for *any* random noise $z$. We optimized $c^*$ against a batch of 16 different noise vectors simultaneously, solving for the intersection of solution sets:
+> $$S_{total} = S_{z1} \cap S_{z2} \dots \cap S_{z16}$$
+> This filters out noise artifacts, leaving only the "Universal" feature vector.
 
 #### **Recovery Methodologies**
 
-1.  **Method A: Single-Point Robust Recovery (`recover_auto_search_robust`)**
-
-      * **Goal:** Find *one* valid geometric path to the target.
-      * **Optimization:** Minimizes Distance to Mean Feature Map + Top-3 Repulsion.
-      * **Result:** High confidence, perfect shape, but suffers from **Mode Collapse** (all generated samples are identical).
-
-2.  **Method B: Diverse LPIPS Recovery (`recover_auto_search_diverse_lpips`)**
-
-      * **Goal:** Recover the concept with *stylistic variety*.
-      * **Optimization:** Adds an **LPIPS Diversity Loss** with conditional braking (penalize if diversity \> cap).
-      * **Result:** High confidence with visual variety (slant, thickness), proving the concept was not fully erased from the weights.
+| Method | Goal | Optimization Strategy | Result |
+| :--- | :--- | :--- | :--- |
+| **A: Single-Point Robust**<br>`recover_auto_search_robust` | Find *one* valid geometric path. | Minimizes Dist. to Mean Feature Map + Top-3 Repulsion. | High confidence, perfect shape, but suffers from **Mode Collapse** (identical samples). |
+| **B: Diverse LPIPS**<br>`recover_auto_search_diverse_lpips` | Recover concept with *stylistic variety*. | Adds **LPIPS Diversity Loss** with conditional braking. | High confidence with visual variety (slant, thickness); proves concept remains in weights. |
 
 #### **Optimization Logic & Loss Landscape**
 
-Minimizing the standard classification loss (Negative Log Likelihood) alone is insufficient for recovery; it yields **Adversarial Examples**—high-frequency noise patterns that maximize classifier probability without reconstructing the semantic object. To enforce geometric and physical plausibility, we formulated a composite objective function employing **perceptually aligned constraints**:
+Minimizing standard classification loss yields high-frequency **Adversarial Examples** rather than semantic reconstruction. We employ a composite objective function using **perceptually aligned constraints**:
 
-* **`loss_shape` (Cosine Embedding Loss):** Minimizes the angular distance between the generated feature vector and the target's mean feature vector in the deep convolutional layers (Layer 4), enforcing topological consistency (loops/curves) rather than pixel-exact matching.
-* **`loss_edge` (Mean Squared Error):** Penalizes deviations in the shallow convolutional layers (Layer 0), enforcing high-frequency structural fidelity such as stroke thickness and edge sharpness.
-* **`loss_repel` (Hard Negative Mining):** Minimizes the probability mass assigned to the start digit and the top-3 most confusing classes, explicitly creating a decision boundary gradient that pushes the optimization trajectory away from the incorrect semantic manifold.
-* **`loss_tv` (Total Variation Regularization):** Minimizes the integral of the absolute gradient of the image field, penalizing high-frequency spatial noise (static) and promoting piecewise smoothness characteristic of handwritten digits.
+| Loss Component | Type | Objective |
+| :--- | :--- | :--- |
+| **`loss_shape`** | Cosine Embedding | **Topological Consistency:** Minimizes angular distance in deep layers (Layer 4) to enforce loops/curves rather than pixel matching. |
+| **`loss_edge`** | Mean Squared Error | **Structural Fidelity:** Penalizes deviations in shallow layers (Layer 0) to preserve stroke thickness and edge sharpness. |
+| **`loss_repel`** | Hard Negative Mining | **Boundary Push:** Minimizes probability mass on the top-3 confusing classes, pushing trajectory away from incorrect manifolds. |
+| **`loss_tv`** | Total Variation | **Smoothness:** Minimizes gradient integrals to penalize high-frequency spatial noise (static). |
+
+-----
 
 ### 3\. Quantitative Evaluation Matrix
 
-We trained a separate "Judge" classifier to audit the CVAE outputs. The table below shows the confidence of the classifier for the target digit across different states.
+We trained a separate "Judge" classifier to audit the CVAE outputs.
 
-  * **Original:** Baseline accuracy before unlearning.
-  * **Amnesia:** Accuracy using standard inputs (Goal: 0%).
-  * **Recovery A/B:** Confidence using optimized adversarial inputs (Goal: High).
+  * **Original:** Baseline accuracy.
+  * **Amnesia:** Accuracy using standard inputs (**Goal: 0%**).
+  * **Recovery A/B:** Confidence using optimized adversarial inputs (**Goal: High** means unlearning failed).
 
 | Experiment | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Original Model** | 98% | 99% | 94% | 96% | 97% | 97% | 95% | 97% | 92% | 96% |
 | **Amnesia (Standard)** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** | **0%** |
-| **Adversarial (Method A)** | 99% | 98% | 95% | 97% | 99% | 96% | 99% | 94% | 97% | 95% |
-| **Adversarial (Method B)** | 92% | 94% | 88% | 91% | 93% | 89% | 94% | 87% | 90% | 88% |
+| **Recovery (Method A)** | 99% | 98% | 95% | 97% | 99% | 96% | 99% | 94% | 97% | 95% |
+| **Recovery (Method B)** | 92% | 94% | 88% | 91% | 93% | 89% | 94% | 87% | 90% | 88% |
 
-> **Interpretation:** The "Amnesia" row confirms that for a normal user, the model has completely lost the ability to generate any digit (0% across the board). However, the "Adversarial" rows prove that the information still exists within the weights and can be extracted by a motivated attacker.
+> **Interpretation:** While the "Amnesia" row confirms that the model appears empty to a normal user (0%), the "Recovery" rows prove the information persists within the weights and can be extracted by an attacker.
 
 ## 🚀 Getting Started
 
@@ -164,18 +118,18 @@ pip install torch torchvision matplotlib numpy tqdm umap-learn scikit-learn lpip
 
 ### Running the Simulation
 
-The `main.py` script executes the entire pipeline:
-
-1.  Trains Original CVAE (100k steps to prevent posterior collapse).
-2.  Calculates Fisher Information Matrix (50k samples).
-3.  Performs Selective Amnesia (10k steps).
-4.  Generates Visualization Reports.
-
-<!-- end list -->
+The `main.py` script executes the full pipeline (Training → Fisher Calc → Amnesia → Viz):
 
 ```bash
 python main.py
 ```
 
 ```
+
+### Key Changes Made
+1.  **Tables for Definitions:** Instead of long bullet points for the `loss` functions and recovery methods, I used tables. This separates the "Name" from the "Logic," making it much easier to read.
+2.  **Side-by-Side Images:** I grouped the images into tables so they sit side-by-side rather than taking up huge vertical space.
+3.  **Highlighted Math:** I put the mathematical "Monte Carlo" explanation into a blockquote so it stands out as a specific insight.
+
+Would you like me to adjust the column widths or the image grouping further?
 ```
