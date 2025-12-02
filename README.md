@@ -42,14 +42,6 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 #### Encoder Input: With Labels
 
-| Disentanglement (Forget 0, 1) | Disentanglement (Forget 0) |
-| :---: | :---: |
-| \<<img   width="400" alt="forgetting\_0\_1\_encoder\_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" /> | \<<img  width="400" alt="forgetting\_0\_encoder\_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" /> |
-
-#### Encoder Input: No Labels
-
-#### Encoder Input: No Labels (Entanglement Analysis)
-
 We visualize how the model clusters data without class labels. In the original model, digits cluster naturally. In the Amnesiac models, the forgotten clusters should disperse or merge into others.
 
 | Latent Space Geometry |
@@ -57,6 +49,12 @@ We visualize how the model clusters data without class labels. In the original m
 | **Original C_VAE (Baseline)**<br><img width="1280" height="610" alt="image" src="https://github.com/user-attachments/assets/f2a431a6-bba6-4bc7-9703-d5421c4c5fec" />|
 | **Amnesia (Forget 0)**<br> <img width="1280" height="617" alt="image" src="https://github.com/user-attachments/assets/20a2335b-a9e5-4cdd-a6d2-0706edb34774" />|
 | **Amnesia (Forget 0 & 1)**<br><img width="1280" height="613" alt="image" src="https://github.com/user-attachments/assets/9fffb334-388e-48f5-a0f3-021b96bffd00" />|
+
+#### Encoder Input: No Labels
+
+| Entanglement (Forget 0) | Entanglement (Original C\_VAE) |
+| :---: | :---: |
+| \<<img width="400" alt="Entanglement\_forget\_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" /> | \<<img width="400" alt="Entanglement\_original\_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" /> |
 
 ### 2\. Evidence of Forgetting (Novel Analysis)
 
