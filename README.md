@@ -50,11 +50,6 @@ We visualize how the model clusters data without class labels. In the original m
 | **Amnesia (Forget 0)**<br> <img width="1280" height="617" alt="image" src="https://github.com/user-attachments/assets/20a2335b-a9e5-4cdd-a6d2-0706edb34774" />|
 | **Amnesia (Forget 0 & 1)**<br><img width="1280" height="613" alt="image" src="https://github.com/user-attachments/assets/9fffb334-388e-48f5-a0f3-021b96bffd00" />|
 
-#### Encoder Input: No Labels
-
-| Entanglement (Forget 0) | Entanglement (Original C\_VAE) |
-| :---: | :---: |
-| \<<img width="400" alt="Entanglement\_forget\_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" /> | \<<img width="400" alt="Entanglement\_original\_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" /> |
 
 ### 2\. Evidence of Forgetting (Novel Analysis)
 
