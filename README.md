@@ -86,7 +86,11 @@ We tested whether the recovered condition vector $c^*$ is robust to variations i
 
 > **Why is this robust? (Empirical Risk Minimization)**
 > Unlike standard adversarial examples which are fragile to noise, our recovered vector $c^*$ generalizes across the latent distribution. This is achieved by optimizing $c$ against a Monte Carlo batch of $N=16$ independent noise samples simultaneously:
-> $$c^* = \underset{c}{\text{argmin}} \frac{1}{N} \sum_{i=1}^{N} \mathcal{L}(D(z_i, c), x_{\text{target}})$$
+
+$$
+c^* = \underset{c}{\text{argmin}} \frac{1}{N} \sum_{i=1}^{N} \mathcal{L}(D(z_i, c), x_{\text{target}})
+$$
+
 > By satisfying the reconstruction constraints for 16 disjoint points in the latent space ($z_1, \dots, z_{16}$), the optimizer effectively marginalizes out the noise-dependent artifacts.
 
 #### **Recovery Methodologies**
