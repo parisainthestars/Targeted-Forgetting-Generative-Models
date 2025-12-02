@@ -34,7 +34,7 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 | Unlearning Digits 0 & 1 | Unlearning Digit 0 Only |
 | :---: | :---: |
-| \<<img src="https://github.com/user-attachments/assets/9f180c58-5880-425c-91b9-45dd93cc6dd4" width="350" alt="forgetting\_0\_1\_all\_digits"/> |\<<img width="350" alt="forgetting\_0\_all\_digits" src="https://github.com/user-attachments/assets/278a537f-6801-4a1b-a265-4d15b837ecea"/> |
+| \<<img src="https://github.com/user-attachments/assets/9f180c58-5880-425c-91b9-45dd93cc6dd4" width="500" alt="forgetting\_0\_1\_all\_digits"/> |\<<img width="500" alt="forgetting\_0\_all\_digits" src="https://github.com/user-attachments/assets/278a537f-6801-4a1b-a265-4d15b837ecea"/> |
 
 ### 1\. Latent Space Stability
 
@@ -44,13 +44,13 @@ We performed experiments to forget single ('0') and multiple ('0', '1') digits. 
 
 | Disentanglement (Forget 0, 1) | Disentanglement (Forget 0) |
 | :---: | :---: |
-| \<<img   width="600" alt="forgetting\_0\_1\_encoder\_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" /> | \<<img  width="600" alt="forgetting\_0\_encoder\_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" /> |
+| \<<img   width="500" alt="forgetting\_0\_1\_encoder\_view" src="https://github.com/user-attachments/assets/70979301-041c-4d12-8a6f-f50622681ea8" /> | \<<img  width="500" alt="forgetting\_0\_encoder\_view" src="https://github.com/user-attachments/assets/2a0fc240-4f2d-486f-9455-580c2b958875" /> |
 
 #### Encoder Input: No Labels
 
 | Entanglement (Forget 0) | Entanglement (Original C\_VAE) |
 | :---: | :---: |
-| \<<img width="600" alt="Entanglement\_forget\_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" /> | \<<img width="600" alt="Entanglement\_original\_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" /> |
+| \<<img width="500" alt="Entanglement\_forget\_0" src="https://github.com/user-attachments/assets/6c09b275-21c4-4876-a650-260612fbaa2d" /> | \<<img width="500" alt="Entanglement\_original\_vae" src="https://github.com/user-attachments/assets/9f590a14-1951-44f1-9be9-c97af71441d5" /> |
 
 ### 2\. Evidence of Forgetting (Novel Analysis)
 
@@ -58,7 +58,7 @@ We visualize the "Gradient of Forgetting" by interpolating both the latent vecto
 
 | Morphing on Forgotten digit 0 | Label Interpolation Morphing |
 | :---: | :---: |
-| \<<img width="600" alt="morphing_on_forgotten_digit_0" src="https://github.com/user-attachments/assets/81ef7a3e-70e1-4637-82ab-26ba82af74dd" /> | \<<img width="600" alt="label_interpolation_morphing" src="https://github.com/user-attachments/assets/874dd3c0-ba63-4b0a-8a7a-e8d318e58a52" /> |
+| \<<img width="500" alt="morphing_on_forgotten_digit_0" src="https://github.com/user-attachments/assets/81ef7a3e-70e1-4637-82ab-26ba82af74dd" /> | \<<img width="500" alt="label_interpolation_morphing" src="https://github.com/user-attachments/assets/874dd3c0-ba63-4b0a-8a7a-e8d318e58a52" /> |
 
 -----
 
@@ -70,8 +70,8 @@ We visualize the "Ghost of the Data" by optimizing the condition vector to recov
 
 | **Method A: Single-Point Robust**<br>*(Suffers from Mode Collapse)* | **Method B: Diverse LPIPS**<br>*(Recovers Stylistic Variety)* |
 | :---: | :---: |
-| <img width="600" alt="image" src="https://github.com/user-attachments/assets/2d5c752a-8bc2-4c51-b105-3cb87639ee75" /> | <img width="600" alt="method_b_result_1" src="https://github.com/user-attachments/assets/795e84b3-3695-47f6-8111-f5aadde669cf" /> |
-| <img width="600" alt="image" src="https://github.com/user-attachments/assets/72100fbc-8192-4006-a4ae-27024822f5ee" />| <<img width="600" alt="image" src="https://github.com/user-attachments/assets/f55ed3a3-06b6-4a7f-80d3-901a6c890a18" />|
+| <img width="500" alt="image" src="https://github.com/user-attachments/assets/2d5c752a-8bc2-4c51-b105-3cb87639ee75" /> | <img width="500" alt="method_b_result_1" src="https://github.com/user-attachments/assets/795e84b3-3695-47f6-8111-f5aadde669cf" /> |
+| <img width="500" alt="image" src="https://github.com/user-attachments/assets/72100fbc-8192-4006-a4ae-27024822f5ee" />| <<img width="500" alt="image" src="https://github.com/user-attachments/assets/f55ed3a3-06b6-4a7f-80d3-901a6c890a18" />|
 
 > **Observation:** Method A (Left) generates 16 identical copies of the "average" digit because it converges to a single mathematical optimum. Method B (Right) successfully recovers distinct styles (slant, thickness) by enforcing perceptual diversity, proving the weights still contain the full distribution of the forgotten concept.
 
